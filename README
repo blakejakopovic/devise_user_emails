@@ -1,0 +1,51 @@
+== Devise Sample project for User has_many  :emails
+
+This is a devise community project to build and release an example project 
+and wiki documentation for devise where a user can have many emails.
+
+== Links 
+
+Groups topic - https://groups.google.com/d/topic/plataformatec-devise/aJIWgR73rxU/discussion
+Devise fork - https://github.com/bjakopovic/devise (likely not needed, but we have it)
+
+== Details
+
+I am currently working on a project where users can have multiple emails 
+linked to their account. The specs are as follows:
+* Users can have multiple emails
+* Users have one primary email
+* Users register with a single email only (can add more later)
+* Users can add emails on edit page
+* Users can login using any linked email
+* Users can modify primary email (using radio input of existing emails)
+* Emails must be confirmed (via clicking link in a confirmation email)
+* Emails must all be validated correctly (regex)
+(optional) Users can login using a username (if we get around to it)
+
+Therefore, these are the things that we need to change:
+* Schema
+* * Create user_emails table
+* * Create indexes
+* * Remove :users, :email column
+* Users model
+* * include has_many emails
+* * add an email instant method to return primary email
+* Sessions Controller
+* * Update form (to support emails association; if required)
+* * Update create method to support multiple email association
+* Registrations Controller
+* * Update validation to work for multiple emails
+* * Update edit action (to allow editing multiple emails and selecting primary email)
+* * Email confirmation (sending an email with confirm link)
+* Test Coverage
+* I am unsure at this point
+
+My underlying knowledge off devise inner workings is a bit limited and I 
+am also yet to achieve rails mastery, however I am willing to contribute 
+and test as much as I can.
+
+If you are willing to contribute, in any way, please reply and we will see 
+if we can't get the basics completed asap. Thanks for your help.
+
+References: This post is for a similar thing, but is incomplete. 
+https://groups.google.com/d/topic/plataformatec-devise/KGZ2OP1jHAo/discussion
