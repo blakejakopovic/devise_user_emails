@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  email: MyString
+  confirmation_token: MyString
+  confirmed_at: 2011-06-09 10:10:10
+  confirmation_sent_at: 2011-06-09 10:10:10
+  primary: 1
+
+two:
+  user_id: 1
+  email: MyString
+  confirmation_token: MyString
+  confirmed_at: 2011-06-09 10:10:10
+  confirmation_sent_at: 2011-06-09 10:10:10
+  primary: 1
